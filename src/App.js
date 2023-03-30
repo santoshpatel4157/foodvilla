@@ -2189,16 +2189,17 @@ const restaurntList =
 //   rating : "4.7",
 // }
 
-const RestaurntCard = ({restaurant}) => {
-  console.log()
+const RestaurntCard = ({cloudinaryImageId , name , cuisines , lastMileTravelString , area}) => {
+  
   return(
     <div className="card">
-    <img alt='logo' src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ restaurant.data?.cloudinaryImageId
+    <img alt='logo' src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ cloudinaryImageId
        }
        />
-      <h2>{restaurant.data?.name}</h2>
-      <h3>{restaurant.data?.cuisines.join(" , ")}</h3>
-      <h4>{restaurant.data?.lastMileTravelString} minutes</h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(" , ")}</h3>
+      <h4>{lastMileTravelString} minutes</h4>
+      <h5>{area}</h5>
 </div>
   );
 };
@@ -2208,22 +2209,17 @@ const RestaurntCard = ({restaurant}) => {
 const Body =() =>{
   return(
     <div className='restaurant-list'>
-      <RestaurntCard restaurant = {restaurntList[0]} />
+
+      {
+        restaurntList.map((restaurntList.index ,restaurnt  =>{
+          return <RestaurntCard {...restaurnt.data} key={restaurntList.index} />
+        }))
+      }
+
       
-      <RestaurntCard restaurant = {restaurntList[1]} />
-      <RestaurntCard restaurant = {restaurntList[2]}  />
-      <RestaurntCard restaurant = {restaurntList[3]}  />
-      <RestaurntCard restaurant = {restaurntList[4]}  />
-      <RestaurntCard restaurant = {restaurntList[5]}  />
-      <RestaurntCard restaurant = {restaurntList[6]} />
-      <RestaurntCard restaurant = {restaurntList[7]} />
-      <RestaurntCard restaurant = {restaurntList[8]}  />
-      <RestaurntCard restaurant = {restaurntList[9]}  />
-      <RestaurntCard restaurant = {restaurntList[10]}  />
-      <RestaurntCard restaurant = {restaurntList[11]}  />
-      <RestaurntCard restaurant = {restaurntList[12]} />
-      <RestaurntCard restaurant = {restaurntList[13]} />
-      <RestaurntCard restaurant = {restaurntList[14]}  />
+      
+    
+      
      
       
       
