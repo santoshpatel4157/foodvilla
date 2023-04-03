@@ -1,13 +1,9 @@
 /* eslint-disable react/jsx-no-undef */
 import './App.css';
-import { Body } from "./comp/body"
+import { Body } from "./comp/Body"
 import { Header } from "./comp/Header";
+import { Footer } from './comp/Footer';
 
-const Footer = () =>{
-  return(
-    <h5>Footer</h5>
-  )
-}
 
 const AppLayout = () =>{
   return(
