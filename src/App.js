@@ -5,6 +5,7 @@ import { Header } from "./comp/Header";
 import { Footer } from './comp/Footer';
 
 
+
 const AppLayout = () =>{
   return(
     <>
