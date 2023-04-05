@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 //import { Title } from "./Title"
-const loggedInUser= () => {
-  return true;
-}
+// const loggedInUser= () => {
+//   return true;
+// }
  const Title = () => (
   <a href="/">
   <img 
