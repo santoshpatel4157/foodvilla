@@ -3,16 +3,20 @@ import './App.css';
 import { Body } from "./comp/Body"
 import { Header } from "./comp/Header";
 import { Footer } from './comp/Footer';
-import { createBrowserRouter , RouterProvider } from 'react-router-dom';
+import { createBrowserRouter , RouterProvider ,Outlet} from 'react-router-dom';
 import  About  from "./comp/About";
 import { Error } from './comp/Error';
+import { Contact } from './comp/Contact';
+import { RestaurantManu } from './comp/RestaurantManu';
+
 
 
 const AppLayout = () =>{
   return(
     <>
     <Header />
-    <Body />
+    {/* <Body /> */}
+    <Outlet />
     <Footer />
     </>
   )
@@ -32,12 +36,27 @@ const appRouter = createBrowserRouter([
   {
     path:"/",
     element:<AppLayout/>,
-    errorElement: <Error/>
+    errorElement: <Error/>,
+    children:[
+      {
+        path:"/about",
+        element:<About />,
+      },
+      {
+        path:"/contact",
+        element:<Contact />,
+      },
+      {
+        path:"/",
+        element:<Body />,
+      },
+      {
+        path:"/restaurant/:id",
+        element:<RestaurantManu />
+      }
+    ]
   },
-  {
-    path:"/about",
-    element:<About />,
-  }
+  
 ])
 
 export default App;

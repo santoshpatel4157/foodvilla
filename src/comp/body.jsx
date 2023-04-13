@@ -38,8 +38,9 @@ export const Body =() =>{
     if (!allRestaurants ) return null;
 
     // if(filterRestaurants?.length ===0) return <h1>No Match Your Filter</h1>
-    return (allRestaurants.length  === 0) ? ( <Shimmer /> ) : (
+    return (allRestaurants.length  === 0 ) ? ( <Shimmer /> ) : (
       <>
+      {/* //{console.log(allRestaurants)} */}
       <div className="search-container"> 
       <input type="text" className="search-input" placeholder="search" value={searchTxt} onChange={(e) => setSearchTxt(e.target.value ) }/>
       <button className="search-btn" onClick={()=>{
